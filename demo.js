@@ -1,8 +1,6 @@
 var fs = require('fs')
 var dirName = process.argv[2] 
 if(dirName){
-    process.exit(0)
-}else{
     fs.mkdirSync("./" + dirName) 
     process.chdir("./" + dirName) 
     fs.mkdirSync('css') 
@@ -11,5 +9,7 @@ if(dirName){
     fs.writeFileSync("./index.html", "")
     fs.writeFileSync("css/style.css", "")
     fs.writeFileSync("./js/main.js", "")
+}else{
+    process.exit(0)
 }
 process.exit(0)
